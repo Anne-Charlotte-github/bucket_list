@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: one
+  title: MyString
+  description: MyText
+  nb_users_min: 1
+  nb_users_max: 1
+  cost: 1
+  is_hidden: false
+  is_completed: false
+  duration: one
+  location: one
+  schedule: one
+
+two:
+  owner: two
+  title: MyString
+  description: MyText
+  nb_users_min: 1
+  nb_users_max: 1
+  cost: 1
+  is_hidden: false
+  is_completed: false
+  duration: two
+  location: two
+  schedule: two
