@@ -8,10 +8,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'shared/flash' %>
-    <%= yield %>
+  <%# w-full flex-1  %>
+    <main class='min-h-screen bg-blue-500'>
+      <div class='container bg bg-red-300'>
+       <%= render 'shared/flash' %>
+       <%= yield %>
+      </div>
+    </main>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
