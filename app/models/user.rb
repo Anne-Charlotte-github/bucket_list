@@ -9,9 +9,7 @@ class User < ApplicationRecord
   has_many :dreams, through: :memberships # where memberships.status = accepted..
 
   has_many :friendships
-  # has_many :confirmed_friendships, -> { Friendship.confirmed }, through: :friendships
-
-  # has_many :friends, through: :confirmed_friendships, class_name: 'User'
-  # has_many :friends, , through: :friendships, class_name: 'User'
   has_many :friends, -> { Friendship.confirmed }, through: :friendships
+
+  validates :nickname, presence: true, uniqueness: { case_sensitive: false, message: 'already exists' }
 end
