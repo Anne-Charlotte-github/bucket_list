@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :owned_dreams, foreign_key: :owner_id, class_name: 'Dream'
 
   has_many :memberships
-  has_many :dreams, through: :memberships # where memberships.status = accepted..
+  has_many :dreams, through: :memberships # where memberships.confirmed = true
 
   has_many :friendships
   has_many :friends, -> { Friendship.confirmed }, through: :friendships

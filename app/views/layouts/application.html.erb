@@ -11,15 +11,13 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <%# w-full flex-1  %>
-    <main class='min-h-screen bg-blue-500'>
-      <div class='container bg bg-red-300'>
-       <%= render 'shared/flash' %>
+  <body class='h-full'>
+    <div class="w-full fixed bottom-0 md:top-0"><%= render 'shared/navbar' %></div>
+    <main class='min-h-screen bg-blue-200 mb-12 md:mt-12 md:mt-0'>
+      <div class='container h-full'>
        <%= yield %>
+       <%= render 'shared/flash' %>
       </div>
     </main>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/footer' %>
   </body>
 </html>

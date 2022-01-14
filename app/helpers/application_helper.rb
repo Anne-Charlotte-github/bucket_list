@@ -7,4 +7,8 @@ module ApplicationHelper
   def responsive_html_for_navbar(emoji, texte)
     "<span>#{emoji}</span><span class='hidden lg:inline-block'>&nbsp;  #{texte}</span>".html_safe
   end
+
+  # def defined?(instance, attribute)
+  #   !instance.attribute.nil?
+  # end
 end

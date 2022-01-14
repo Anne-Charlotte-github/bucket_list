@@ -1,0 +1,33 @@
+<!-- My avatar -->
+<div class="flex justify-center">
+  <p> My profile </p>
+  <%# <div class="flex justify-center">
+    <%= image_tag 'dream.jpg', class:"h-5 w-5 rounded-full border border-white p-1" %>
+  <%# </div> %>
+  <p> <%= current_user.nickname.capitalize %> </p>
+</div>
+
+<!-- Button add an activity -->
+<div class="flex justify-center">
+  <button class="btn btn-primary" >
+    <%= link_to "Ajouter un rêve", new_dream_path %>
+  </button>
+</div>
+
+<!-- My dreams -->
+<h2>My bucket list</h2>
+<div class='grid-structure'>
+  <% @dreams.each do |dream| %>
+  <% @dream = dream %>
+    <%= render 'dream_list', local: @dream %>
+  <% end %>
+</div>
+
+<!-- My friends dreams -->
+<h2 class="mt-4">Dreams I am member</h2>
+<div class='grid-structure'>
+  <% @friends_dreams.each do |dream|%>
+    <% @dream = dream %>
+    <%= render 'dream_list', local: @dream %>
+  <% end %>
+</div>

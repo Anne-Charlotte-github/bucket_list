@@ -1,8 +1,16 @@
 class DreamsController < ApplicationController
-  def index
-    @dreams = current_user.owned_dreams
+  def create
   end
 
-  def show
+  def new
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end

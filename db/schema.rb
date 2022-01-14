@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_144511) do
+ActiveRecord::Schema.define(version: 2022_01_13_102732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_144511) do
     t.integer "nb_users_min"
     t.integer "nb_users_max"
     t.integer "cost"
-    t.boolean "is_hidden"
+    t.boolean "is_hidden", default: true
     t.boolean "is_completed"
     t.bigint "duration_id"
     t.bigint "location_id"
@@ -89,9 +89,9 @@ ActiveRecord::Schema.define(version: 2022_01_11_144511) do
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "dream_id", null: false
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_confirmed", default: false
     t.index ["dream_id"], name: "index_memberships_on_dream_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_144511) do
   create_table "schedules", force: :cascade do |t|
     t.datetime "start_at"
     t.datetime "end_at"
-    t.boolean "is_confirmed"
+    t.boolean "is_confirmed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

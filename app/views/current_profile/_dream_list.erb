@@ -1,0 +1,28 @@
+<div class="card-shape">
+  <div class="card-top">
+    <%= image_tag 'dream.jpg', class:"object-cover w-full object-top p-1"%>
+  </div>
+  <div class="card-middle">
+    <%# <div class='card-icon'> %>
+      <%# <div><%= link_to '🖊', edit_user_registration_path %>
+    <%# </div> %>
+    <p class="card-title"> <%= @dream.title %></p>
+    <div class="card-content">
+      <% if !@dream.duration.nil? %>
+        <p class="mb-2"> ⏱ &nbsp; <%= @dream.duration.quantity %> <%= @dream.duration.unit %> </p>
+      <% end %>
+      <% if !@dream.cost.nil? %>
+        <p class="mb-2"> 💰 &nbsp; <%= "#{@dream.cost} €" %> </p>
+      <% end %>
+      <% if !@dream.location.nil? %>
+        <p class="mb-2"> 💰 &nbsp; <%= "#{@dream.location.name} €" %> </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-bottom">
+    <span class="card-span">
+      🐵 &nbsp; <%= @dream.owner.nickname.capitalize %>
+    </span>
+
+  </div>
+</div>
