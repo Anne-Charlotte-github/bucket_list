@@ -1,0 +1,36 @@
+<div class="card-shape">
+  <% if @dream.owner != current_user %>
+    <button class="btn btn-red btn-card card-top-left">
+      <%= link_to "🐵 #{@dream.owner.nickname.capitalize}", profile_path(@dream.owner) %>
+    </button>
+  <% end %>
+  <div class="card-top">
+    <%= image_tag 'dream.jpg', class:"object-cover w-full object-top p-1"%>
+  </div>
+  <div class="card-middle">
+    <p class="card-title"><%= @dream.title.capitalize %></p>
+    <div class="card-content">
+      <% if !@dream.duration.nil? %>
+        <p class="mb-2">⏱&nbsp; <%= @dream.duration.quantity %> <%= @dream.duration.unit %> </p>
+      <% end %>
+      <% if !@dream.cost.nil? %>
+        <p class="mb-2">💰&nbsp; <%= "#{@dream.cost} €" %> </p>
+      <% end %>
+      <% if !@dream.location.nil? %>
+        <p class="mb-2">📍&nbsp; <%= @dream.location.name.capitalize %> </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-bottom">
+    <button class="btn btn-yellow btn-card">
+      <%= link_to '🔎', dream_path(@dream) %>
+    </button>
+    <button class="btn btn-yellow btn-card">
+      <% if @dream.owner == current_user %>
+        <%= link_to "✍️", edit_dream_path(@dream.id) %>
+      <% else %>
+        <%= link_to membership_action(@dream), memberships_path(dream: {id: @dream.id}), method: "POST" %>
+      <% end %>
+    </button>
+  </div>
+</div>

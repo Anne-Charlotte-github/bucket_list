@@ -12,12 +12,12 @@
   </head>
 
   <body class='h-full'>
-    <div class="w-full fixed bottom-0 md:top-0"><%= render 'shared/navbar' %></div>
-    <main class='min-h-screen bg-blue-200 mb-12 md:mt-12 md:mt-0'>
-      <div class='container h-full'>
+    <%= render 'shared/navbar' %>
+    <main class='min-h-screen mb-12 md:mt-12'>
+      <div class='container h-full mb-12 md:mt-12'>
        <%= yield %>
-       <%= render 'shared/flash' %>
       </div>
+      <%= render 'shared/flash' %>
     </main>
   </body>
 </html>

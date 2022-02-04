@@ -1,0 +1,21 @@
+<div class="flex flex-col">
+  <h1> My friends </h1>
+  <% @friends.each do |friend| %>
+    <div>
+      <button class="card-btn">
+        <%= link_to "🐵 #{friend.nickname.capitalize}", profile_path(friend) %>
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<h2>Their dreams </h2>
+<div class='grid-structure'>
+  <% @friends.each do |friend| %>
+    <% dreams = friend.owned_dreams %>
+    <% dreams.each do |dream| %>
+      <% @dream = dream %>
+      <%= render 'shared/dream_list', local: @dream %>
+    <% end %>
+  <% end %>
+</div>

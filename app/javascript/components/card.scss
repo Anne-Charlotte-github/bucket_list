@@ -10,7 +10,7 @@
   @apply h-32 md:h-40 px-4 pt-2;
 }
 .card-title {
-  @apply h-2/5 font-bold text-sm lg:text-xl overflow-auto ;
+  @apply h-2/5 font-bold text-sm lg:text-base overflow-auto flex justify-center;
 }
 .card-content{
   @apply h-3/5 text-gray-700 text-xs lg:text-sm overflow-auto ;
@@ -20,11 +20,11 @@
 // }
 
 .card-bottom{
-  @apply w-full px-2 py-2 flex justify-center;
+  @apply w-full px-2 py-2 flex justify-around;
 }
 .card-span{
-  @apply inline-block rounded-full px-3 py-1 text-xs lg:text-sm font-semibold bg-gray-200 text-gray-700;
+  @apply flex justify-center rounded-full mt-2 px-3 py-1 text-xs lg:text-sm font-semibold bg-gray-200 text-gray-700;
 }
-.card-btn{
-  @apply justify-center rounded-full px-3 py-1 text-xs lg:text-sm font-semibold bg-gray-200 hover:bg-gray-400;
+.card-top-left{
+  @apply fixed top-0 left-0 mt-2 ml-2;
 }

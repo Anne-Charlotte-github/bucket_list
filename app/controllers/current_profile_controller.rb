@@ -1,5 +1,4 @@
 class CurrentProfileController < ApplicationController
-  before_action
 
   def index
     @dreams = current_user.owned_dreams

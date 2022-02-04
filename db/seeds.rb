@@ -47,27 +47,32 @@ puts "🐵 #{User.count} users created."
 dream1 = Dream.new(owner_id: user1.id, title: 'Road trip in the south of Norway', is_completed: false,
                    nb_users_min: 1, nb_users_max: 2, cost: 1000, duration_id: Duration.last.id,
                    description: 'I dream of going back to Norway to enjoy again the hikings, cabins and midnight sun')
-dream2 = Dream.new(owner_id: user1.id, title: 'Dream 2', is_completed: false,
+dream2 = Dream.new(owner_id: user1.id, title: "Pas d'info pour le titre de mon rêve", is_completed: false,
                    nb_users_min: 1, nb_users_max: 4, cost: 500, duration_id: Duration.first.id,
                    description: 'petit dream blabla')
-dream3 = Dream.new(owner_id: user2.id, title: 'dream 3', is_completed: false,
-                   nb_users_min: 1, nb_users_max: 6, cost: 20,
-                   description: 'Super cool dream 3')
-dream4 = Dream.new(owner_id: user3.id, title: '4/ Becoming, maybe, formule 1 driver', is_hidden: false,
-                   nb_users_min: 1, nb_users_max: 6, cost: 20,
-                   description: 'Have I a dream that one day, maybe, I might become formule 1 driver')
-dream5 = Dream.new(owner_id: user1.id, title: '5/ Becoming, maybe, formule 1 driver', is_hidden: false,
+dream3 = Dream.new(owner_id: user2.id, title: "finir l'app Buxton ticket !", is_completed: false,
+                   nb_users_min: 1, nb_users_max: 6, cost: 20, duration_id: Duration.last.id,
+                   description: 'Qui veut coder la meilleure app du marché avec moi ?')
+dream4 = Dream.new(owner_id: user3.id, title: 'Becoming, maybe, formule 1 driver', is_hidden: false,
                    nb_users_min: 1, nb_users_max: 6, cost: 20,
                    description: 'Have I a dream that one day, maybe, I might become formule 1 driver')
-dream6 = Dream.new(owner_id: user1.id, title: '6/ Becoming, maybe, formule 1 driver', is_hidden: false,
+dream5 = Dream.new(owner_id: user1.id, title: 'Make it snow everyday', is_hidden: false,
+                   nb_users_min: 1, nb_users_max: 6, cost: 20, duration_id: Duration.last.id,
+                   description: "Because when it snows, we can't go to the office to work")
+dream6 = Dream.new(owner_id: user1.id, title: 'Discover Alaska', is_hidden: false,
                    nb_users_min: 1, nb_users_max: 6, cost: 20,
-                   description: 'Have I a dream that one day, maybe, I might become formule 1 driver')
+                   description: 'Faire des balade en traineaux, adopter un huski, manger du bon saumon etc.')
+dream7 = Dream.new(owner_id: user2.id, title: 'Gagner au loto', is_hidden: false,
+                   nb_users_min: 1, nb_users_max: 10, cost: 1,
+                   description: "Si on s'y met tous, on peut y arriver !")
+
 dream1.save!
 dream2.save!
 dream3.save!
 dream4.save!
 dream5.save!
 dream6.save!
+dream7.save!
 puts "🌟 #{Dream.count} dreams created."
 
 # Old deleted, now seeding new ones : friendships

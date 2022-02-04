@@ -1,16 +1,16 @@
-<nav class="h-12 w-full z-50 flex items-center justify-between bg-blue-900 text-white">
+<nav class="w-full fixed h-12 bottom-0 md:top-0 z-50 flex items-center justify-between bg-blue-900 text-white">
   <div>
     <%= link_to root_path, class:class_for_link_to(root_path) do %>
       <%= responsive_html_for_navbar('🌟','My bucket list') %>
     <% end %>
-    <%= link_to root_path, class:class_for_link_to(root_path) do %>
-      <%= responsive_html_for_navbar('👀',"My friends' buckets") %>
-    <% end %>
-    <%= link_to root_path, class:class_for_link_to(root_path) do %>
+    <%# <%= link_to root_path, class:class_for_link_to(root_path) do %>
+      <%# <%= responsive_html_for_navbar('👀',"My friends' buckets") %>
+     <%# <% end %>
+    <%= link_to friendships_path, class:class_for_link_to(friendships_path) do %>
       <%= responsive_html_for_navbar('👯',"My friends") %>
     <% end %>
     <%= link_to root_path, class:class_for_link_to(root_path)do %>
-      <%= responsive_html_for_navbar('🗓','Dreams schedule') %>
+      <%= responsive_html_for_navbar('🗓','Dreams planning') %>
     <% end %>
   </div>
   <div>
